@@ -67,7 +67,7 @@ fn main()->std::io::Result<()> {
             <h3>links</h3>
             <a href=\"https://github.com/3nya\"> github</a> <br>
             <a href=\"https://www.linkedin.com/in/enya-chen2/\"> linkedin </a> <br>
-            <a href=\"\">blog</a><br>
+            <a href=\"../blog.html\">blog</a><br>
             <!-- <a href=\"about.html\">about</a><br> -->
             </td>
 
