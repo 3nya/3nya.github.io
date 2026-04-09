@@ -95,6 +95,8 @@ p {
   font-family:'Ubuntu';
   color: var(--color7);
   font-size: 14px;
+  line-height: 1.4em;
+  letter-spacing: 0.03em;
 }
 
 a {
