@@ -28,22 +28,67 @@
 <table id="container">
   <tr>
     <td id="content">
-      <h2>welcome ✦.*‧₊˚ </h2>
-      <p> Hi! i'm enya! </p>
-      <p> I'm a sophomore studying CS & math at UIUC. I'm a course assistant for 
-        <a href="https://cs491-cap-sp26.pages.dev/">CS491</a> (a course at UIUC on competitive programming),
-         and do some <a href = "https://peer.asee.org/58101"> research</a>.
-      </p>
+      <div class="home-layout">
+        <div class="intro-text">
+          <h2>welcome ✦.*‧₊˚ </h2>
+          <p> Hi! i'm enya! </p>
+          <p> I'm a sophomore studying CS & math at UIUC. I'm a course assistant for 
+            <a href="https://cs491-cap-sp26.pages.dev/">CS491</a> (a course at UIUC on competitive programming),
+             and do some <a href = "https://peer.asee.org/58101"> research</a>.
+          </p>
 
-      <p> Outside of school, I like competitive programming,
-        painting, rhythm games (osu!/chuni/maimai) :3
-      </p>
+          <p> Outside of school, I like competitive programming,
+            painting, rhythm games (osu!/<s>geki</s>chumai) :3
+          </p>
 
-      <p> also i use linux! (currently fedora but slowly moving to arch...)</p>
+          <p> also i use linux! (currently fedora but slowly moving to arch...)</p>
+
+          <br> 
+          <p> some paintings by me -> </p>
+        </div>
+
+        <div class="painting-viewer">
+          <button class="painting-button" id="painting-prev" type="button" aria-label="previous painting">&lt;</button>
+          <figure class="painting-frame">
+            <img id="painting-image" src="paintings/p1.jpg" alt="painting 1">
+            <figcaption id="painting-count">1 / 4</figcaption>
+          </figure>
+          <button class="painting-button" id="painting-next" type="button" aria-label="next painting">&gt;</button>
+        </div>
+      </div>
+      
+      <p align="center"> ~.✦ ── ⟢ ────୨ৎ──── ⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹ ────୨ৎ──── ⟢ ── ✦.~</p>
     </td>
   </tr>
 </table>
 
+<script>
+  const paintings = [
+    "paintings/p1.jpg",
+    "paintings/p2.jpg",
+    "paintings/p3.jpg",
+    "paintings/p4.jpg"
+  ];
+
+  let currentPainting = 0;
+  const paintingImage = document.getElementById("painting-image");
+  const paintingCount = document.getElementById("painting-count");
+
+  function showPainting(index) {
+    currentPainting = (index + paintings.length) % paintings.length;
+    paintingImage.src = paintings[currentPainting];
+    paintingImage.alt = `painting ${currentPainting + 1}`;
+    paintingCount.textContent = `${currentPainting + 1} / ${paintings.length}`;
+  }
+
+  document.getElementById("painting-prev").addEventListener("click", () => {
+    showPainting(currentPainting - 1);
+  });
+
+  document.getElementById("painting-next").addEventListener("click", () => {
+    showPainting(currentPainting + 1);
+  });
+</script>
 
 </body>
 </html>

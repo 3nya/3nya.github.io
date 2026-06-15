@@ -99,6 +99,78 @@ p {
   letter-spacing: 0.03em;
 }
 
+.home-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: flex-start;
+  column-gap: 24px;
+}
+
+.intro-text {
+  min-width: 0;
+}
+
+.painting-viewer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+  gap: 12px;
+  margin: 0 0 4px;
+}
+
+.painting-frame {
+  width: 260px;
+  margin: 0;
+  text-align: center;
+}
+
+.painting-frame img {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: contain;
+  border: 3px ridge #ffffff;
+  background: var(--color2);
+}
+
+.painting-frame figcaption {
+  margin-top: 6px;
+  font-family: 'Ubuntu';
+  color: var(--color7);
+  font-size: 13px;
+}
+
+.painting-button {
+  width: 20px;
+  height: 20px;
+  border: 2px ridge #ffffff;
+  background: var(--color3);
+  color: var(--color8);
+  cursor: pointer;
+  font-family: 'Shantell Sans';
+  font-size: 13px;
+  line-height: 1;
+}
+
+.painting-button:hover {
+  background: var(--color5);
+}
+
+@media (max-width: 700px) {
+  .home-layout {
+    display: block;
+  }
+
+  .painting-viewer {
+    margin-top: 12px;
+  }
+
+  .painting-frame {
+    width: min(430px, calc(100% - 92px));
+  }
+}
+
 a {
   color: #45a8ff;
   text-decoration: underline;
