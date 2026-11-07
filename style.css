@@ -179,3 +179,9 @@ a {
 a:hover {
   color: #ffb0d9;
 }
+
+.giscus {
+  max-width: 650px;
+  margin: 1px auto;
+
+}
