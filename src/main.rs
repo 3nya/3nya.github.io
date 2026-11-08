@@ -58,6 +58,7 @@ fn main()->std::io::Result<()> {
         <head>
         <title>blog</title>
         <link rel=\"stylesheet\" href=\"../style.css\">
+        <link rel=\"stylesheet\" href=\"style.css\">
         </head>
         <body>
 
@@ -117,7 +118,7 @@ fn main()->std::io::Result<()> {
         let path = file?.path();
         let file_stem = path.file_stem().unwrap();
 
-        if path.ends_with("styles.css") {
+        if path.extension().and_then(|extension| extension.to_str()) != Some("html") {
             continue;
         }
 

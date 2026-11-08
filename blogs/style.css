@@ -1,0 +1,13 @@
+/* Keep large images from widening the blog's table layout. */
+#container {
+  width: 100%;
+  max-width: 780px;
+  table-layout: fixed;
+}
+
+#content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1em auto;
+}
